@@ -1,15 +1,15 @@
-import path from 'path';
-import {
+const path = require('path');
+const {
   entryPoint, setOutput,
   addPlugins, createConfig, customConfig,
   env, sourceMaps,
-} from '@webpack-blocks/webpack';
-import babel from '@webpack-blocks/babel6';
-import extractText from '@webpack-blocks/extract-text';
-import { basePlugins, developmentPlugins, productionPlugins } from './webpack.plugins';
+} = require('@webpack-blocks/webpack');
+const babel = require('@webpack-blocks/babel6');
+const extractText = require('@webpack-blocks/extract-text');
+const { basePlugins, developmentPlugins, productionPlugins } = require('./webpack.plugins');
 
-module.exports = (props = {}) => createConfig([
-  entryPoint('./src/index.js'),
+module.exports = props => createConfig([
+  entryPoint('./templates/index.js'),
   setOutput({
     path: 'dist',
     filename: 'bundle.js',
@@ -17,7 +17,7 @@ module.exports = (props = {}) => createConfig([
   }),
   customConfig({
     resolve: {
-      root: [path.join(__dirname, 'src')],
+      root: [path.join(__dirname, 'templates')],
     },
   }),
   babel(),

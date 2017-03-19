@@ -1,9 +1,9 @@
-import { webpack } from '@webpack-blocks/webpack';
-import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
+const { webpack } = require('@webpack-blocks/webpack');
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
-export const basePlugins = props => [
+exports.basePlugins = props => [
   new StaticSiteGeneratorPlugin('main', ['/'], props),
   new CopyWebpackPlugin([
     {
@@ -20,7 +20,7 @@ export const basePlugins = props => [
   }),
 ];
 
-export const developmentPlugins = [
+exports.developmentPlugins = [
   new BrowserSyncPlugin({
     host: 'localhost',
     port: 3000,
@@ -30,7 +30,7 @@ export const developmentPlugins = [
   }),
 ];
 
-export const productionPlugins = [
+exports.productionPlugins = [
   new webpack.optimize.DedupePlugin(),
   new webpack.optimize.UglifyJsPlugin({
     compressor: {
