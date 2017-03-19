@@ -5,6 +5,6 @@
 [libs]
 
 [options]
-module.system.node.resolve_dirname=src
+module.system.node.resolve_dirname=templates
 module.name_mapper='.*\(.css\)' -> 'CSSModule'
 module.system=haste
