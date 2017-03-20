@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // @flow
 import meow from 'meow';
 import R from 'ramda';
@@ -14,8 +15,6 @@ const cli = meow(`
   Examples
     $ md2talkie slide.md --watch
 `);
-
-console.log(cli.flags);
 
 process.env.NODE_ENV =
   cli.flags && cli.flags.watch ? 'development' : 'production';
