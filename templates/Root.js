@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import Slide from 'Slide';
-import type { Slides } from 'types/Slides';
+import Slide from './Slide';
+import type { Slides } from './types/Slides';
 
 type Props = Slides;
 

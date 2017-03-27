@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import type { Slide } from 'types/Slides';
+import type { Slide } from './types/Slides';
 
 export default ({ attributes: { layout = true, invert }, body }: Slide) =>
   <section
