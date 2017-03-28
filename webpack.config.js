@@ -1,3 +1,4 @@
+// @flow
 const path = require('path');
 const {
   entryPoint, setOutput,
@@ -15,7 +16,7 @@ module.exports = props => createConfig([
     filename: 'bundle.js',
     libraryTarget: 'umd',
   }),
-  babel({ exclude: '' }),
+  babel({ exclude: path.join(__dirname, 'node_modules') }),
   extractText('style.css'),
   addPlugins(basePlugins(props)),
   env('development', [
