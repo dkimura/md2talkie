@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // @flow
 import meow from 'meow';
 import R from 'ramda';
@@ -15,7 +16,8 @@ const cli = meow(`
     $ md2talkie slide.md --watch
 `);
 
-process.env.NODE_ENV = 'development';
+process.env.NODE_ENV =
+  cli.flags && cli.flags.watch ? 'development' : 'production';
 
 const createSlide = R.pipe(create, build);
 createSlide(cli.input[0]);

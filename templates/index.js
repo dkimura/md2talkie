@@ -2,13 +2,13 @@
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { DOMProperty } from 'react-dom/lib/ReactInjection';
-import type { Slides } from 'types/Slides';
 
 import 'talkiejs/dist/talkie.min.css';
 import 'talkiejs/dist/talkie-default.min.css';
 import 'highlightjs/styles/monokai_sublime.css';
 
-import Root from 'Root';
+import Root from './Root';
+import type { Slides } from './types/Slides';
 
 DOMProperty.injectDOMPropertyConfig({
   Properties: {

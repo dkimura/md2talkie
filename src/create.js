@@ -2,7 +2,7 @@
 import fs from 'fs';
 import R from 'ramda';
 import fm from 'front-matter';
-import type { Slides, Slide } from '../src/types/Slides';
+import type { Slides, Slide } from '../templates/types/Slides';
 
 type ConfigObject = {
   splitRule: string | RegExp,
